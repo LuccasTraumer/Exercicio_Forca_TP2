@@ -1,0 +1,15 @@
+Criar uma Classe Main para testar os metodos implementados
+
+Concluidos:
+FORCA 
+TECLADO
+
+Faltando:
+
+Classes                                            Metodos Faltando:                           Metodos Concluidos:
+
+ControladorDeErros
+	
+ControladorDeLetrasDigitadas
+	
+Tracinho
