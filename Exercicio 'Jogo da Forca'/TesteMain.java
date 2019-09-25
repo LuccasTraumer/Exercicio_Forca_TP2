@@ -4,8 +4,10 @@ public class TesteMain
 	{
 
 		try{
-			Tracinhos no = new Tracinhos(3);
-			System.out.println(no.isComTracinhosAinda());
+			BancoDePalavras no = new BancoDePalavras();
+			BancoDePalavras va = new BancoDePalavras();
+			//va.banco[1] = "lucas";
+			System.out.println(no.equals(va));
 		}catch(Exception erro){}
 
 	}

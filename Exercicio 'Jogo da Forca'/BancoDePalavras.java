@@ -43,17 +43,25 @@ public class BancoDePalavras
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
+        boolean igual = true;
         if(this == obj)
-        	return true;
+        	return igual;
         if(obj == null)
-        	return false;
+        	igual = false;
         if(this.getClass() != obj.getClass())
-        	return false;
+        	igual = false;
         BancoDePalavras aux = (BancoDePalavras)obj;
-        if(this.banco != aux.banco)
-        	return false;
-
-        return true;
+        if(this.banco.length != aux.banco.length)
+        	igual = false;
+        else
+        {
+			for(int i =0; i < aux.banco.length; i++)
+			{
+			if(this.banco[i] != aux.banco[i])
+				igual = false;
+			}
+		}
+        return igual;
     }
 
     public int hashCode ()
