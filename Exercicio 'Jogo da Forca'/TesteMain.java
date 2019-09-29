@@ -6,8 +6,8 @@ public class TesteMain
 		try{
 			BancoDePalavras no = new BancoDePalavras();
 			BancoDePalavras va = new BancoDePalavras();
-			//va.banco[1] = "lucas";
-			System.out.println(no.equals(va));
+			//sva.incluirPalavra("lucas");
+			System.out.println("Eles são iguais?: "+ no.equals(va));
 		}catch(Exception erro){}
 
 	}
