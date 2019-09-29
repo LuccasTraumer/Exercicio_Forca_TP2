@@ -63,20 +63,34 @@ public class BancoDePalavras
 		}
         return igual;
     }
-    public String[] incluirPalavra(String palavra)
+    public void incluirPalavra(String palavra)
     {
-		String[] bancoA; // Vet auxiliar
-		int tamanhoVet = banco.length; // tamanho do Vet
-		bancoA = new String[tamanhoVet+1]; // Instancia o vet
-		for(int i= 0; i < tamanhoVet; i++)
+		palavra = palavra.toUpperCase();
+		String[] bancoA = null;
+		int tamanhoVet = banco.length;
+		bancoA = new String[tamanhoVet+1];
+		for(int i=0; i < tamanhoVet+1; i++)
 		{
-			banco[i] = bancoA[i]; //
-			if(bancoA.length > banco.length)
+			if(i == tamanhoVet)
 				bancoA[i] = palavra;
+			else{
+				bancoA[i] = banco[i];
+				banco[i] = bancoA[i];
+				}
+		}
+		atualizacaoVetor(bancoA);
+	}
+
+	private String[] atualizacaoVetor(String[] bancoA)
+	{
+		int tamanhoVet = bancoA.length;
+		banco = new String[tamanhoVet];
+		for(int i=0; i < tamanhoVet; i ++)
+		{
+			banco[i] = bancoA[i];
 		}
 		return banco;
 	}
-
     public int hashCode ()
     {
 		// calcular e retornar o hashcode de this
