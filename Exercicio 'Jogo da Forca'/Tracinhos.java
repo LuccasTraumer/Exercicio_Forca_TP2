@@ -64,8 +64,15 @@ class Tracinhos implements Cloneable
         if(this.getClass() != obj.getClass())
         	return false;
         Tracinhos aux = (Tracinhos)obj;
-        if(this.texto != aux.texto)
+        if(this.texto.length != aux.texto.length)
         	return false;
+
+        else{
+			for(int i=0; i < this.texto.length; i++)
+				if(this.texto[i] != aux.texto[i])
+					return false;
+			}
+
 
         return true;
     }
@@ -74,7 +81,8 @@ class Tracinhos implements Cloneable
     {
 		// calcular e retornar o hashcode de this
 		int ret = 666;
-		ret = ret*7 + this.texto.hashCode();
+		for(int i=0; i < this.texto.length; i++)
+			ret = ret*7 + this.texto[i].hashCode();
 
 		if(ret < 0)
 			ret =- ret;

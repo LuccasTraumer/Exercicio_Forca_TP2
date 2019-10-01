@@ -95,7 +95,12 @@ public class BancoDePalavras
     {
 		// calcular e retornar o hashcode de this
 		int ret = 666;
-		ret = ret*7 + banco.hashCode();
+		for(int i=0; i < this.banco.length; i++)
+			ret = ret*7 + banco[i].hashCode();
+
+		if(ret < 0)
+			ret =- ret;
+
 
         return ret;
 
